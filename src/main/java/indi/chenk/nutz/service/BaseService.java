@@ -1,4 +1,4 @@
-package com.art58.nutz.service;
+package indi.chenk.nutz.service;
 
 import java.util.List;
 import java.util.Map;
@@ -16,10 +16,10 @@ import org.nutz.log.Log;
 import org.nutz.log.Logs;
 import org.nutz.trans.Atom;
 
-import com.art58.nutz.pojo.BaseEntity;
-import com.art58.nutz.result.PageResult;
-import com.art58.tool.util.StringTool;
-import com.art58.tool.util.UUIDUtil;
+import indi.chenk.nutz.pojo.BaseEntity;
+import indi.chenk.nutz.result.PageResult;
+import indi.chenk.tool.util.StringTool;
+import indi.chenk.tool.util.UUIDUtil;
 
 /**
  * @Description: 后台操作基类

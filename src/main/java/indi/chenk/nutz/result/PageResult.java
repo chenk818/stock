@@ -1,4 +1,4 @@
-package com.art58.nutz.result;
+package indi.chenk.nutz.result;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.art58.site.filter;
+package indi.chenk.stock.filter;
 
 import org.nutz.json.JsonFormat;
 import org.nutz.mvc.ActionContext;
@@ -6,9 +6,9 @@ import org.nutz.mvc.ActionFilter;
 import org.nutz.mvc.View;
 import org.nutz.mvc.view.UTF8JsonView;
 
-import com.art58.nutz.mvc.annotation.Authority;
-import com.art58.nutz.result.Results;
-import com.art58.site.util.UserUtil;
+import indi.chenk.nutz.mvc.annotation.Authority;
+import indi.chenk.nutz.result.Results;
+import indi.chenk.stock.util.UserUtil;
 
 
 public class UserFilter implements ActionFilter {

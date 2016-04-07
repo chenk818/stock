@@ -1,4 +1,4 @@
-package com.art58.nutz.pojo;
+package indi.chenk.nutz.pojo;
 
 import org.nutz.dao.entity.annotation.Column;
 import org.nutz.dao.entity.annotation.Name;

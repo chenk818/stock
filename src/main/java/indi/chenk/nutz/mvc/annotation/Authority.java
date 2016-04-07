@@ -1,4 +1,4 @@
-package com.art58.nutz.mvc.annotation;
+package indi.chenk.nutz.mvc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.art58.nutz.dao;
+package indi.chenk.nutz.dao;
 
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;

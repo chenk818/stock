@@ -1,4 +1,4 @@
-package com.art58.nutz.mvc.upload;
+package indi.chenk.nutz.mvc.upload;
 
 
 import java.util.Map;

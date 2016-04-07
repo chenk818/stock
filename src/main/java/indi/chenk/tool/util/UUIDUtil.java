@@ -1,4 +1,4 @@
-package com.art58.tool.util;
+package indi.chenk.tool.util;
 
 import java.util.UUID;
 

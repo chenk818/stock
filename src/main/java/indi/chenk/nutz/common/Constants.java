@@ -1,11 +1,5 @@
-package com.art58.nutz.common;
+package indi.chenk.nutz.common;
 
-/**
- * 系统常量
- *
- * @author zbl
- * @date 2015.04.01
- */
 public class Constants {
 	/**
 	 * 后台执行状态码 *

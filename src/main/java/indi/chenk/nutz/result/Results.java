@@ -1,4 +1,4 @@
-package com.art58.nutz.result;
+package indi.chenk.nutz.result;
 
 public class Results {
 	public static final String FAIL = "0";// 后台执行失败，若用户没有权限，也返回该 状态
