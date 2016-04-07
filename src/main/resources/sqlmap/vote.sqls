@@ -1,0 +1,5 @@
+/*getusers*/
+select su.*,GET_FIRST_PINYIN_CHAR(name) as letter from voting v 
+left join sys_user su on v.userid=su.id  $condition
+/*getarts*/
+select aa.* from art_enlist  ae left join art_artwork aa on ae.artid=aa.id $condition
