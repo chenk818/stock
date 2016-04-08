@@ -14,9 +14,10 @@ public class DaoUtil {
 
 	private DaoUtil() {
 		Ioc ioc = Mvcs.ctx().getDefaultIoc();
-		if (ioc != null) {
-			dao = ioc.get(NutDao.class, "dao");
+		if (ioc == null) {
+			ioc = new NutIoc(new JsonLoader("ioc/dao.js"));
 		}
+		dao = ioc.get(Dao.class);
 	}
 
 	public static DaoUtil getInst() {

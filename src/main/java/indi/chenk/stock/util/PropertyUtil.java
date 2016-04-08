@@ -11,7 +11,7 @@ public class PropertyUtil {
 	private static Properties props;
 
 	static {
-		props = init();
+	//	props = init();
 	}
 
 	public static Properties init() {
@@ -51,6 +51,10 @@ public class PropertyUtil {
 		}catch(Exception e) {
 		}
 		return result;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(System.getProperty("java.io.tmpdir"));
 	}
 
 }
