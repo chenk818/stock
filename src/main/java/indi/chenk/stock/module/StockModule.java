@@ -42,4 +42,14 @@ public class StockModule {
 			return null;
 		}
 	}
+	
+	@At("/list")
+	public Object list() {
+		try {
+			return service.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

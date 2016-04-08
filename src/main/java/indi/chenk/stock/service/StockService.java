@@ -2,6 +2,7 @@ package indi.chenk.stock.service;
 
 import indi.chenk.nutz.service.BaseService;
 import indi.chenk.stock.pojo.Deal;
+import indi.chenk.stock.pojo.Stock;
 import indi.chenk.tool.util.StringTool;
 
 import java.io.File;
@@ -26,6 +27,11 @@ import org.nutz.ioc.loader.annotation.IocBean;
 @IocBean
 public class StockService  extends BaseService {
 
+	public List<Stock> list() {
+		SimpleCriteria cri = Cnd.cri();
+		cri.where().andEquals("state", 1);
+		return super.query(Stock.class, cri);
+	}
 	
 	public List<Deal> query(String code,String start,String end) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
