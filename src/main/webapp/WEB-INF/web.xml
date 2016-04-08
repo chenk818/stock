@@ -10,12 +10,12 @@
 		<filter-class>org.nutz.mvc.NutFilter</filter-class>
 		<init-param>
 			<param-name>modules</param-name>
-			<param-value>com.art58.site.module.MainModule</param-value>
+			<param-value>indi.chenk.stock.module.MainModule</param-value>
 		</init-param>
 
 		<init-param>
 			<param-name>ignore</param-name>
-			<param-value>^(.+[.])(png|gif|jpg|js|css|jspx|jpeg|html|json|ttf|otf)$</param-value>
+			<param-value>^(.+[.])(jsp|png|gif|jpg|js|css|jspx|jpeg|html|json|ttf|otf)$</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>

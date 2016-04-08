@@ -5,6 +5,7 @@ import org.nutz.mvc.annotation.Encoding;
 import org.nutz.mvc.annotation.Filters;
 import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Modules;
+import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.ioc.provider.ComboIocProvider;
 
 import indi.chenk.stock.filter.UserFilter;
@@ -15,6 +16,7 @@ import indi.chenk.stock.filter.UserFilter;
 		"*org.nutz.ioc.loader.json.JsonLoader", "ioc/",
 		"*org.nutz.ioc.loader.annotation.AnnotationIocLoader", "indi.chenk.stock" })
 @Filters(@By(type = UserFilter.class))
+@Ok("json")
 public class MainModule {
 
 }

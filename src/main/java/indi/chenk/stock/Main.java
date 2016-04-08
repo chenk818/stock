@@ -81,6 +81,7 @@ public class Main {
 	}
 
 	private static List<Deal> getStockDeal(String code,String start,String end) throws Exception {
+		String oldcode = code;
 		if(code.length() == 7) {
 			//上证代码，什么也不干；
 		}else if (code.startsWith("6")) {
@@ -115,7 +116,7 @@ public class Main {
 
 			Deal d = new Deal();
 			d.setDealtime(arr[0]);
-			d.setCode(code);
+			d.setCode(oldcode);
 			d.setName(arr[2]);
 			d.setTclose(getDouble(arr[3]));
 			d.setHigh(getDouble(arr[4]));
