@@ -16,15 +16,22 @@
 		var data = [];
 		$(document).ready(function() {
 			$.getJSON('query', {codes:codes,start:start,end:end}, function(d) {
-				var data = [],data1 = [];
-				d = d[0];
-				for(idx in d) {
-					obj = d[idx];
-					data.push({name:obj.name,value:[obj.dealtime,obj.tclose]});
+				var data = [];
+				for(pos in d) {
+					var _data = {data:[],name:'股市',type:'line',showSymbol : false,
+							hoverAnimation : false,};
 					
-					obj2 = d[d.length-idx-1];
-					data1.push({name:obj.name,value:[obj.dealtime,obj2.tclose]});
+					for(idx in d[pos]) {
+						obj = d[pos][idx];
+						var rate = 1;
+						if(obj.code=='0000001') {
+							rate = 30;
+						}
+						_data.data.push({name:obj.name,value:[obj.dealtime,obj.tclose/rate]});
+					}
+					data.push(_data);
 				}
+				
 				var myChart = echarts.init(document.getElementById('main'));
 				// 指定图表的配置项和数据
 				var option = {
@@ -34,9 +41,12 @@
 					tooltip : {
 						trigger: 'axis',
 				        formatter: function (params) {
-				        	console.log(params);
-				            params = params[0];
-				            return params.name + ":" + params.value[0] + ' : ' + params.value[1];
+				        	var s = params[0].value[0] + ":";
+				        	for(idx in params) {
+				        		s += params[idx].name + "=" + params[idx].value[1] + ";";
+				        	}
+				        	return s;
+				            
 				        },
 				        axisPointer: {
 				            animation: false
@@ -55,20 +65,7 @@
 							show : true
 						}
 					},
-					series : [ {
-						name : '模拟数据',
-						type : 'line',
-						showSymbol : false,
-						hoverAnimation : false,
-						data : data
-					},
-					{
-						name : '模拟数据2',
-						type : 'line',
-						showSymbol : false,
-						hoverAnimation : false,
-						data : data1
-					}]
+					series : data
 				};
 
 				// 使用刚指定的配置项和数据显示图表。

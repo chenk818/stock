@@ -27,13 +27,15 @@ import org.nutz.ioc.loader.annotation.IocBean;
 @IocBean
 public class StockService  extends BaseService {
 
+	public static final String SH = "0000001";
+	
 	public List<Stock> list() {
 		SimpleCriteria cri = Cnd.cri();
 		cri.where().andEquals("state", 1);
 		return super.query(Stock.class, cri);
 	}
 	
-	public List<Deal> query(String code,String start,String end) throws Exception {
+	public List<List<Deal>> query(String codes,String start,String end) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
 		if(StringTool.isNull(start)) {
@@ -50,10 +52,25 @@ public class StockService  extends BaseService {
 		SimpleCriteria cri = Cnd.cri();
 		cri.where().and(new Static("dealtime>='"+start+"'"));
 		cri.where().and(new Static("dealtime<='"+end+"'"));
-		cri.where().andEquals("code", code);
+		codes += "," + SH;
+		cri.where().andIn("code", codes.split(","));
 		cri.getOrderBy().asc("dealtime");
-		
-		return super.query(Deal.class, cri);
+		List<Deal> list = super.query(Deal.class, cri);
+		Map<String,List<Deal>> map = new HashMap<String, List<Deal>>();
+		for(Deal d:list) {
+			if(map.containsKey(d.getName())) {
+				map.get(d.getName()).add(d);
+			}else {
+				List<Deal> dlist = new ArrayList<Deal>();
+				dlist.add(d);
+				map.put(d.getName(), dlist);
+			}
+		}
+		List<List<Deal>> result = new ArrayList<List<Deal>>();
+		for(String key:map.keySet()) {
+			result.add(map.get(key));
+		}
+		return result;
 		
 	}
 	

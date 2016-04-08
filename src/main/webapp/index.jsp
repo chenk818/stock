@@ -14,7 +14,7 @@
 			$.getJSON('list',function(d) {
 				for(idx in d) {
 					obj = d[idx];
-					var msg = "<li><a  href='line.jsp?code=" + obj.code + "'>" + obj.name + "</a></li>";
+					var msg = "<li><a  href='line.jsp?codes=" + obj.code + "'>" + obj.name + "</a></li>";
 			        $("#stocks").append(msg);
 				}
 			});

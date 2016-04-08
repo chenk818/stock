@@ -34,9 +34,9 @@ public class StockModule {
 	}
 	
 	@At("/query")
-	public Object query(@Param("code") String code,@Param("start") String start,@Param("end") String end) {
+	public Object query(@Param("codes") String codes,@Param("start") String start,@Param("end") String end) {
 		try {
-			return service.query(code, start, end);
+			return service.query(codes, start, end);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
