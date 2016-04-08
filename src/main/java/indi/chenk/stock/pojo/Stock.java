@@ -16,4 +16,10 @@ public class Stock extends BaseEntity {
 	
 	@Column("name")
 	private String name;
+	
+	@Column("state")
+	private int state;
+	
+	@Column("lastTime")
+	private String lastTime;
 }

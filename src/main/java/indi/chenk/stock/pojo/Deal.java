@@ -21,7 +21,7 @@ public class Deal extends BaseEntity {
 	private String name;
 	
 	@Column("dealtime")
-	private Date dealtime;
+	private String dealtime;
 	
 	@Column("topen")
 	private double topen;
